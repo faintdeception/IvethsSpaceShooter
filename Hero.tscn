@@ -1,0 +1,36 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Textures/Ships/svg_spaceships.png" type="Texture" id=1]
+[ext_resource path="res://Textures/Effects/fire03.png" type="Texture" id=2]
+[ext_resource path="res://Laser.tscn" type="PackedScene" id=3]
+
+[node name="Hero" type="Node2D"]
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+vframes = 6
+hframes = 6
+frame = 26
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="LeftRocket" type="Sprite" parent="."]
+position = Vector2( 52.504, 51.7884 )
+texture = ExtResource( 2 )
+offset = Vector2( -59.5789, -7.71976 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="RightRocket" type="Sprite" parent="."]
+position = Vector2( 73.4835, 51.0831 )
+texture = ExtResource( 2 )
+offset = Vector2( -59.5789, -7.71976 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Laser" parent="." instance=ExtResource( 3 )]
+position = Vector2( 3.60001, -27.3306 )

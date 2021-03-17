@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Meeting The Call (LOOP).wav-8d0382bdce21d0888881cf7d558bafaa.sample"
+
+[deps]
+
+source_file="res://Audio/Level1/Meeting The Call (LOOP).wav"
+dest_files=[ "res://.import/Meeting The Call (LOOP).wav-8d0382bdce21d0888881cf7d558bafaa.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=0
