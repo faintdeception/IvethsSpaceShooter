@@ -1,0 +1,53 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\zruffin\\Source\\Repos\\Playground\\IvethsSpaceShooter\\Iveths Space Shooter.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\zruffin\\Source\\Repos\\Playground\\IvethsSpaceShooter\\Iveths Space Shooter.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\zruffin\\Source\\Repos\\Playground\\IvethsSpaceShooter\\Iveths Space Shooter.csproj",
+        "projectName": "Iveths Space Shooter",
+        "projectPath": "C:\\Users\\zruffin\\Source\\Repos\\Playground\\IvethsSpaceShooter\\Iveths Space Shooter.csproj",
+        "packagesPath": "C:\\Users\\zruffin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\zruffin\\Source\\Repos\\Playground\\IvethsSpaceShooter\\.mono\\temp\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\NuGet.Config",
+          "C:\\Users\\zruffin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net472"
+        ],
+        "sources": {
+          "http://codebuilder/nexus/repository/nuget-hosted": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://www.myget.org/F/sitecorerocks/api/v2": {},
+          "https://www.myget.org/F/xunit/": {}
+        },
+        "frameworks": {
+          "net472": {
+            "targetAlias": "net472",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net472": {
+          "targetAlias": "net472",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

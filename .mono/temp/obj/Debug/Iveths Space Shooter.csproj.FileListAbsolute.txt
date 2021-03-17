@@ -1,0 +1,8 @@
+C:\Users\zruffin\Source\Repos\Playground\IvethsSpaceShooter\.mono\temp\bin\Debug\Iveths Space Shooter.dll
+C:\Users\zruffin\Source\Repos\Playground\IvethsSpaceShooter\.mono\temp\bin\Debug\Iveths Space Shooter.pdb
+C:\Users\zruffin\Source\Repos\Playground\IvethsSpaceShooter\.mono\temp\obj\Debug\Iveths Space Shooter.csprojAssemblyReference.cache
+C:\Users\zruffin\Source\Repos\Playground\IvethsSpaceShooter\.mono\temp\obj\Debug\Iveths Space Shooter.AssemblyInfoInputs.cache
+C:\Users\zruffin\Source\Repos\Playground\IvethsSpaceShooter\.mono\temp\obj\Debug\Iveths Space Shooter.AssemblyInfo.cs
+C:\Users\zruffin\Source\Repos\Playground\IvethsSpaceShooter\.mono\temp\obj\Debug\Iveths Space Shooter.csproj.CoreCompileInputs.cache
+C:\Users\zruffin\Source\Repos\Playground\IvethsSpaceShooter\.mono\temp\obj\Debug\Iveths Space Shooter.dll
+C:\Users\zruffin\Source\Repos\Playground\IvethsSpaceShooter\.mono\temp\obj\Debug\Iveths Space Shooter.pdb

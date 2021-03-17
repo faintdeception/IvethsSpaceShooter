@@ -10,3 +10,4 @@ scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 1 )
 vframes = 6
 hframes = 6
+frame = 1
