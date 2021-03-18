@@ -17,7 +17,7 @@ public class Hero : Node2D
 		spawnTimer = GetNode<Timer>("SpawnTimer");
 		spawnTimer.Connect("timeout", this, "onSpawnTimeout");
 		laserScene = ResourceLoader.Load<PackedScene>("res://Laser.tscn");
-		SpawnLasers();
+		//SpawnLasers();
 	}
 
 //  // Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -30,9 +30,9 @@ public class Hero : Node2D
 	{
 		var randomX = this.GlobalPosition.x;
 		var randomY = this.GlobalPosition.y;
-			var newPosition = new Vector2(randomX, randomY);
+			var newPosition = new Vector2(randomX, randomY).Normalized();
 			var laser = laserScene.Instance() as Laser; 
-			laser.Position = newPosition;
+			laser.GlobalPosition = newPosition;
 			
 
 			
@@ -53,7 +53,7 @@ public class Hero : Node2D
 	public void SpawnLasers()
 	{
 		spawnTimer.WaitTime = 3;
-		spawnTimer.OneShot = false;
+		spawnTimer.OneShot = true;
 		spawnTimer.Start();
 	}
 

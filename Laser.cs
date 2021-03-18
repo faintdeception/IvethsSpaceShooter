@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public class Laser : Node2D
+public class Laser : KinematicBody2D
 {
 	// Declare member variables here. Examples:
 	// private int a = 2;
@@ -12,14 +12,23 @@ public class Laser : Node2D
 	// Node2D Laser {get;set;}
 
 	Vector2 CurrentPosition {get;set;}
-	KinematicBody2D LaserBody {get;set;}
+	VisibilityNotifier2D VisibilityNotifier {get;set;}
+	// KinematicBody2D LaserBody {get;set;}
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
 		
-		LaserBody = GetNode<KinematicBody2D>("KinematicBody2D");
+		//LaserBody = GetNode<KinematicBody2D>("Laser");
 		// Laser = GetNode<Node2D>("Sprite");
+		VisibilityNotifier = GetNode<VisibilityNotifier2D>("VisibilityNotifier2D");
 		GD.Print("I am a laser pew pew!");
+		
+	this.CurrentPosition = this.Position;
+
+	 //GD.Print(this.CurrentPosition);
+	 var newYPosition = this.CurrentPosition.y - 1;
+
+		VisibilityNotifier._Exi
 	}
 
 //  // Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -27,12 +36,10 @@ public class Laser : Node2D
  {
 	 //GD.Print("Tick");
 
-	this.CurrentPosition = this.LaserBody.GlobalPosition;
 
-	 //GD.Print(this.CurrentPosition);
-	 var newYPosition = this.CurrentPosition.y -.0001f;
-
- 	this.LaserBody.MoveAndSlide(new Vector2(this.CurrentPosition.x, newYPosition));
+ 	this.MoveAndCollide(this.Position);
 	 
  }
+
+ 
 }
