@@ -5,6 +5,9 @@ public class BasicBad : Node2D
 {
     [Export]
     public int Hitpoints {get;set;}
+
+    private AnimationNodeStateMachinePlayback AnimationStateMachine { get; set; }
+
     public override void _Ready()
     {
         base._Ready();
@@ -13,8 +16,9 @@ public class BasicBad : Node2D
         // AudioPlayer.VolumeDb = 1;
         // AudioPlayer.PitchScale = 1;
 
-        // AnimationStateMachine = this.GetNode("AnimationTree").Get("parameters/playback") as AnimationNodeStateMachinePlayback;
-        // AnimationStateMachine.Start("Idle");
+        AnimationStateMachine = this.GetNode("AnimationTree").Get("parameters/playback") as AnimationNodeStateMachinePlayback;
+        AnimationStateMachine.Start("Idle");
+
         var vpHurtbox = this.GetNode<Hurtbox>("Pivot/Body/Hurtbox");
         vpHurtbox.Connect("OnDamageTaken", this, "on_damage_taken");
         // StunTimer.Connect("timeout", this, "onStunTimeOut");
@@ -53,13 +57,18 @@ public class BasicBad : Node2D
         //     soundLocation = AUDIO_RESOURCE_LOCATION + BigHurtSounds[(int)GD.RandRange(0, BigHurtSounds.Count)];
         //     PlayAnimation("Knockdown");            
         // }
-        // else if(Hitpoints < 0)
-        // {
-        //     PlayAnimation("Death");
-        //     soundLocation = AUDIO_RESOURCE_LOCATION + DeathRattles[(int)GD.RandRange(0, DeathRattles.Count)];
-        //     var deathTimer  = GetTree().CreateTimer(5);
-        //     deathTimer.Connect("timeout", this, "onDeathTimeout");
-        // }
+        // else
+
+        Hitpoints--;
+        GD.Print(Hitpoints);
+        
+        if(Hitpoints < 0)
+        {
+            PlayAnimation("Death");
+            //soundLocation = AUDIO_RESOURCE_LOCATION + DeathRattles[(int)GD.RandRange(0, DeathRattles.Count)];
+            var deathTimer  = GetTree().CreateTimer(5);
+            deathTimer.Connect("timeout", this, "onDeathTimeout");
+        }
 
 
         // var stream = ResourceLoader.Load(soundLocation) as AudioStream;
@@ -69,8 +78,7 @@ public class BasicBad : Node2D
         //     AudioPlayer.Play();
         //     AudioPlayer.Stream = stream;
         // }
-        Hitpoints--;
-        GD.Print(Hitpoints);
+        
 
         //StunTimer.Start(StunDuration);
         //isStunned = true;
@@ -81,6 +89,15 @@ public class BasicBad : Node2D
         //     PlayAnimation("Die");
 
         // this.Hitpoints--;
+    }
+
+    private void PlayAnimation(string animation)
+    {
+        if(AnimationStateMachine.IsPlaying())
+        {
+            AnimationStateMachine.Travel(animation);
+        }
+
     }
 
 }
