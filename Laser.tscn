@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Textures/Lasers/laserRed02.png" type="Texture" id=1]
 [ext_resource path="res://Laser.cs" type="Script" id=2]
@@ -7,7 +7,11 @@
 radius = 1.25252
 height = 5.47336
 
-[node name="Laser" type="Node2D"]
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 1.59756
+height = 5.08521
+
+[node name="Laser" type="KinematicBody2D"]
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
@@ -23,4 +27,7 @@ scale = Vector2( 0.180613, 0.414724 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LaserHitArea"]
 position = Vector2( -0.0468235, 0.0468216 )
 shape = SubResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 2 )
 [connection signal="area_entered" from="LaserHitArea" to="." method="_on_LaserHitArea_area_entered"]

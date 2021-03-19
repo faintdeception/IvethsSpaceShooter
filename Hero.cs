@@ -1,60 +1,68 @@
 using Godot;
-using System;
 
-public class Hero : Node2D
+public class Hero : KinematicBody2D
 {
-	// Declare member variables here. Examples:
-	// private int a = 2;
-	// private string b = "text";
 
-	private PackedScene laserScene;
-	
-	private Timer spawnTimer;
+    [Export] public int speed = 200;
+    private PackedScene laserScene;
 
-	// Called when the node enters the scene tree for the first time.
-	public override void _Ready()
-	{
-		spawnTimer = GetNode<Timer>("SpawnTimer");
-		spawnTimer.Connect("timeout", this, "onSpawnTimeout");
-		laserScene = ResourceLoader.Load<PackedScene>("res://Laser.tscn");
-		SpawnLasers();
-	}
+    public Vector2 Velocity = new Vector2();
 
-//  // Called every frame. 'delta' is the elapsed time since the previous frame.
-//  public override void _Process(float delta)
-//  {
-//      
-//  }
+    public override void _Ready()
+    {
+        //spawnTimer = GetNode<Timer>("SpawnTimer");
+        //spawnTimer.Connect("timeout", this, "onSpawnTimeout");
+        laserScene = ResourceLoader.Load<PackedScene>("res://Laser.tscn");
 
-	 private void SpawnLaser()
-	{
-		var randomX = this.GlobalPosition.x;
-		var randomY = this.GlobalPosition.y;
-			var newPosition = new Vector2(randomX, randomY).Normalized();
-			var laser = laserScene.Instance() as Laser; 
-			laser.Position = this.Position;
-			
+    }
 
-			
-			this.GetParent().AddChild(laser);
-			laser._Ready();
-	}
 
- public void onSpawnTimeout()
-	{
-		GD.Print("Spawn a laser!");
-		this.SpawnLaser();
+    public override void _Input(InputEvent e)
+    {
 
-		
-	}
+        if (Input.IsActionPressed("shoot"))
+        {
+            this.SpawnLaser();
+        }
+    }
 
-	
+    private void SpawnLaser()
+    {
+        var randomX = this.Position.x;
+        var randomY = this.Position.y - 50;
+        var newPosition = new Vector2(randomX, randomY);
+        var laser = laserScene.Instance() as Laser;
+        laser.Position = newPosition;
 
-	public void SpawnLasers()
-	{
-		spawnTimer.WaitTime = 3;
-		spawnTimer.OneShot = false;
-		spawnTimer.Start();
-	}
+
+
+        this.GetParent().AddChild(laser);
+        laser._Ready();
+    }
+
+    public void GetInput()
+    {
+        Velocity = new Vector2();
+
+        if (Input.IsActionPressed("move_right"))
+            Velocity.x += 1;
+
+        if (Input.IsActionPressed("move_left"))
+            Velocity.x -= 1;
+
+        if (Input.IsActionPressed("move_down"))
+            Velocity.y += 1;
+
+        if (Input.IsActionPressed("move_up"))
+            Velocity.y -= 1;
+
+        Velocity = Velocity.Normalized() * speed;
+    }
+
+    public override void _PhysicsProcess(float delta)
+    {
+        GetInput();
+        Velocity = MoveAndSlide(Velocity);
+    }
 
 }
