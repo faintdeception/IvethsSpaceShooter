@@ -23,12 +23,7 @@ public class Laser : KinematicBody2D
 		VisibilityNotifier = GetNode<VisibilityNotifier2D>("VisibilityNotifier2D");
 		GD.Print("I am a laser pew pew!");
 		
-	this.CurrentPosition = this.Position;
-
-	 //GD.Print(this.CurrentPosition);
-	 var newYPosition = this.CurrentPosition.y - 1;
-
-		VisibilityNotifier._Exi
+	
 	}
 
 //  // Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -37,7 +32,12 @@ public class Laser : KinematicBody2D
 	 //GD.Print("Tick");
 
 
- 	this.MoveAndCollide(this.Position);
+ 	this.CurrentPosition = this.Position;
+
+	 //GD.Print(this.CurrentPosition);
+	 var newYPosition = this.CurrentPosition.y - 1;
+
+	 this.Position = new Vector2(this.Position.x, newYPosition);
 	 
  }
 

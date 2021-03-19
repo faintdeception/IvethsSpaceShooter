@@ -8,34 +8,34 @@
     ".NETFramework,Version=v4.7.2": []
   },
   "packageFolders": {
-    "C:\\Users\\zruffin\\.nuget\\packages\\": {},
+    "C:\\Users\\dbm82\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\zruffin\\Source\\Repos\\Playground\\IvethsSpaceShooter\\Iveths Space Shooter.csproj",
+      "projectUniqueName": "C:\\Users\\dbm82\\source\\repos\\Games\\IvethsSpaceShooter\\Iveths Space Shooter.csproj",
       "projectName": "Iveths Space Shooter",
-      "projectPath": "C:\\Users\\zruffin\\Source\\Repos\\Playground\\IvethsSpaceShooter\\Iveths Space Shooter.csproj",
-      "packagesPath": "C:\\Users\\zruffin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\zruffin\\Source\\Repos\\Playground\\IvethsSpaceShooter\\.mono\\temp\\obj\\",
+      "projectPath": "C:\\Users\\dbm82\\source\\repos\\Games\\IvethsSpaceShooter\\Iveths Space Shooter.csproj",
+      "packagesPath": "C:\\Users\\dbm82\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\dbm82\\source\\repos\\Games\\IvethsSpaceShooter\\.mono\\temp\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\NuGet.Config",
-        "C:\\Users\\zruffin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\dbm82\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net472"
       ],
       "sources": {
-        "http://codebuilder/nexus/repository/nuget-hosted": {},
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Users\\dbm82\\AppData\\Local\\Esri\\NuGet": {},
         "https://api.nuget.org/v3/index.json": {},
-        "https://www.myget.org/F/sitecorerocks/api/v2": {},
-        "https://www.myget.org/F/xunit/": {}
+        "https://packages.xenko.com/nuget": {},
+        "https://www.myget.org/F/orchardcore-preview/api/v3/index.json": {}
       },
       "frameworks": {
         "net472": {
@@ -52,7 +52,7 @@
     "frameworks": {
       "net472": {
         "targetAlias": "net472",
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.104\\RuntimeIdentifierGraph.json"
       }
     }
   }
