@@ -55,6 +55,7 @@ public void _on_LaserHitArea_area_entered(Area2D area)
             //     AudioPlayer.Stream = stream;
             //     AudioPlayer.Play();
             // }
+			this.QueueFree();
         }
 
     }
