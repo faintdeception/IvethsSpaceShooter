@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Textures/Ships/svg_spaceships.png" type="Texture" id=1]
+[ext_resource path="res://Characters/BasicBad/BasicBad.cs" type="Script" id=2]
+[ext_resource path="res://Utility/Hurtbox.cs" type="Script" id=3]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 27.834
+
+[node name="BasicBad" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Pivot" type="Position2D" parent="."]
+
+[node name="Body" type="Sprite" parent="Pivot"]
+rotation = 3.14159
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+vframes = 6
+hframes = 6
+frame = 1
+
+[node name="Hurtbox" type="Area2D" parent="Pivot/Body"]
+rotation = -3.14159
+scale = Vector2( 2, 2 )
+script = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pivot/Body/Hurtbox"]
+position = Vector2( -0.943878, -0.7551 )
+shape = SubResource( 1 )

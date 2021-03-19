@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public class Laser : KinematicBody2D
+public class Laser : Node2D
 {
 	// Declare member variables here. Examples:
 	// private int a = 2;
@@ -40,6 +40,23 @@ public class Laser : KinematicBody2D
 	 this.Position = new Vector2(this.Position.x, newYPosition);
 	 
  }
+public void _on_LaserHitArea_area_entered(Area2D area)
+    {
+        // var sprite = GetNode<Sprite>("Arrow");
+        // sprite.Visible = !sprite.Visible;
+        GD.Print("Hit!");
+        if (area is IHurtBox)
+        {
+            (area as IHurtBox).take_damage();
+            //var stream = ResourceLoader.Load(SLAP_SOUND_RES) as AudioStream;
 
+            // if (!AudioPlayer.Playing)
+            // {
+            //     AudioPlayer.Stream = stream;
+            //     AudioPlayer.Play();
+            // }
+        }
+
+    }
  
 }
