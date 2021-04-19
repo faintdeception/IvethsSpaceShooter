@@ -9,6 +9,9 @@ public class Hurtbox : Area2D, IHurtBox
     [Signal]
     public delegate void OnDamageTaken();
 
+    [Signal]
+    public delegate void OnDeath();
+
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
@@ -18,8 +21,12 @@ public class Hurtbox : Area2D, IHurtBox
 
     public void take_damage()
     {
-        // this.Connect("damage_taken", this.Owner, "on_damage_taken");
         this.EmitSignal("OnDamageTaken");
-        // animSM.Travel("Idle");
+        
+    }
+
+    public void die()
+    {
+        this.EmitSignal("OnDeath");
     }
 }

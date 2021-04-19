@@ -7,7 +7,7 @@ public class Laser : KinematicBody2D
 	// private int a = 2;
 	// private string b = "text";
 
-	[Export] public float MaximumSpeed = 500;
+	[Export] public float MaximumSpeed = 10;
 	[Export] public float Acceleration = 2000;
 	// Node2D Laser {get;set;}
 
@@ -23,7 +23,7 @@ public class Laser : KinematicBody2D
 		//LaserBody = GetNode<KinematicBody2D>("Laser");
 		// Laser = GetNode<Node2D>("Sprite");
 		VisibilityNotifier = GetNode<VisibilityNotifier2D>("VisibilityNotifier2D");
-		GD.Print("I am a laser pew pew!");
+		//GD.Print("I am a laser pew pew!");
 		
 		Velocity.y = -1;
 	
@@ -49,13 +49,13 @@ public override void _PhysicsProcess(float delta)
         
         Velocity = Velocity.Normalized() * MaximumSpeed;
 
-        MoveAndSlide(Velocity);
+        MoveAndCollide(Velocity);
 }
 public void _on_LaserHitArea_area_entered(Area2D area)
     {
         // var sprite = GetNode<Sprite>("Arrow");
         // sprite.Visible = !sprite.Visible;
-        GD.Print("Hit!");
+        GD.Print("Hit!" + area.Name);
         if (area is IHurtBox)
         {
             (area as IHurtBox).take_damage();
