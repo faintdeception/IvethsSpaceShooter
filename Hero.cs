@@ -12,7 +12,7 @@ public class Hero : KinematicBody2D
     public int HitPoints = 10;
     private PackedScene laserScene;
 
-    public Vector2 Velocity = new Vector2();
+	public Vector2 Velocity = new Vector2();
 
     private AnimationNodeStateMachinePlayback AnimationStateMachine { get; set; }
 
@@ -28,14 +28,14 @@ public class Hero : KinematicBody2D
     }
 
 
-    public override void _Input(InputEvent e)
-    {
+	public override void _Input(InputEvent e)
+	{
 
-        if (Input.IsActionPressed("shoot"))
-        {
-            this.SpawnLaser();
-        }
-    }
+		if (Input.IsActionPressed("shoot"))
+		{
+			this.SpawnLaser();
+		}
+	}
 
     private void SpawnLaser()
     {
@@ -48,34 +48,34 @@ public class Hero : KinematicBody2D
 
 
 
-        this.GetParent().AddChild(laser);
-        laser._Ready();
-    }
+		this.GetParent().AddChild(laser);
+		laser._Ready();
+	}
 
-    public void GetInput()
-    {
-        Velocity = new Vector2();
+	public void GetInput()
+	{
+		Velocity = new Vector2();
 
-        if (Input.IsActionPressed("move_right"))
-            Velocity.x += 1;
+		if (Input.IsActionPressed("ui_right"))
+			Velocity.x += 1;
 
-        if (Input.IsActionPressed("move_left"))
-            Velocity.x -= 1;
+		if (Input.IsActionPressed("move_left"))
+			Velocity.x -= 1;
 
-        if (Input.IsActionPressed("move_down"))
-            Velocity.y += 1;
+		if (Input.IsActionPressed("move_down"))
+			Velocity.y += 1;
 
-        if (Input.IsActionPressed("move_up"))
-            Velocity.y -= 1;
+		if (Input.IsActionPressed("move_up"))
+			Velocity.y -= 1;
 
         Velocity = Velocity.Normalized() * Speed;
     }
 
-    public override void _PhysicsProcess(float delta)
-    {
-        GetInput();
-        Velocity = MoveAndSlide(Velocity);
-    }
+	public override void _PhysicsProcess(float delta)
+	{
+		GetInput();
+		Velocity = MoveAndSlide(Velocity);
+	}
 
     public void _on_Hurtbox_area_entered(Area2D area)
     {

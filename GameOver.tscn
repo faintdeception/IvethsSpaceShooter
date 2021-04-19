@@ -1,0 +1,63 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://GameOver.cs" type="Script" id=1]
+
+[node name="GameOver" type="CanvasLayer"]
+pause_mode = 2
+script = ExtResource( 1 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -56.5
+margin_top = -53.0
+margin_right = 56.5
+margin_bottom = 53.0
+focus_next = NodePath("Button")
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+margin_right = 113.0
+margin_bottom = 54.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer"]
+margin_right = 113.0
+margin_bottom = 54.0
+custom_constants/margin_right = 20
+custom_constants/margin_top = 20
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 20
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/MarginContainer"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 93.0
+margin_bottom = 34.0
+text = "Game Over"
+
+[node name="RetryButton" type="Button" parent="VBoxContainer"]
+margin_top = 58.0
+margin_right = 113.0
+margin_bottom = 78.0
+text = "Retry"
+
+[node name="QuitButton" type="Button" parent="VBoxContainer"]
+margin_top = 82.0
+margin_right = 113.0
+margin_bottom = 102.0
+text = "Quit"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+margin_top = 106.0
+margin_right = 113.0
+margin_bottom = 106.0

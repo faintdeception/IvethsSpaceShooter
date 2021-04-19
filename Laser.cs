@@ -46,8 +46,8 @@ public class Laser : KinematicBody2D
 
 public override void _PhysicsProcess(float delta)
 {
-        
-        Velocity = Velocity.Normalized() * MaximumSpeed;
+		
+		Velocity = Velocity.Normalized() * MaximumSpeed;
 
         MoveAndCollide(Velocity);
 }
@@ -61,14 +61,14 @@ public void _on_LaserHitArea_area_entered(Area2D area)
             (area as IHurtBox).take_damage();
             //var stream = ResourceLoader.Load(SLAP_SOUND_RES) as AudioStream;
 
-            // if (!AudioPlayer.Playing)
-            // {
-            //     AudioPlayer.Stream = stream;
-            //     AudioPlayer.Play();
-            // }
-        }
+			// if (!AudioPlayer.Playing)
+			// {
+			//     AudioPlayer.Stream = stream;
+			//     AudioPlayer.Play();
+			// }
+		}
 			this.QueueFree();
 
-    }
+	}
  
 }
