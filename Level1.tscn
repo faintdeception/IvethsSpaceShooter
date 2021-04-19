@@ -70,8 +70,7 @@ shape = SubResource( 3 )
 position = Vector2( -44.9683, 301.421 )
 shape = SubResource( 4 )
 
-[node name="BasicBad5" parent="." instance=ExtResource( 3 )]
-position = Vector2( 773.126, 118.366 )
+[node name="RightBounds" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RightBounds"]
 position = Vector2( 1071.68, 293.459 )
