@@ -68,7 +68,7 @@ public class Level1 : Node2D
             var randomY = this.Position.y - r.Next(0, 100);
             var newPosition = new Vector2(randomX, randomY);
             var basicBad = basicBadScene.Instance() as BasicBad;
-            basicBad.Speed = r.Next(100, 185);
+            basicBad.Speed = r.Next(100, 165);
             if (i % 2 == 0)
             {
                 basicBad.Position = newPosition;
