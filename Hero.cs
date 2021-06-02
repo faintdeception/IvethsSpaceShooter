@@ -75,6 +75,7 @@ public class Hero : KinematicBody2D
 	{
 		GetInput();
 		Velocity = MoveAndSlide(Velocity);
+        GlobalPosition = new Vector2(Mathf.Clamp(GlobalPosition.x, 0, 1024), Mathf.Clamp(GlobalPosition.y, 0f, 600f));
 	}
 
     public void _on_Hurtbox_area_entered(Area2D area)
