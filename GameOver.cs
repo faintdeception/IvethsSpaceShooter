@@ -3,6 +3,7 @@ using System;
 
 public class GameOver : CanvasLayer
 {
+    // Testing out power mode.
     // Declare member variables here. Examples:
     // private int a = 2;
     // private string b = "text";
